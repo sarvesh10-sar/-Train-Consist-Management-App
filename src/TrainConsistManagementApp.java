@@ -1,31 +1,39 @@
-import java.util.HashSet;
-import java.util.Set;
+import java.util.LinkedList;
 
 public class TrainConsistManagementApp {
-
     public static void main(String[] args) {
 
-        System.out.println("========================================");
-        System.out.println("UC3 - Track Unique Bogie IDs");
-        System.out.println("========================================");
+        System.out.println("=================================");
+        System.out.println("UC4 - Maintain Ordered Bogie Consist");
+        System.out.println("=================================\n");
 
-        // Create HashSet
-        Set<String> bogieIds = new HashSet<>();
+        // Create LinkedList
+        LinkedList<String> train = new LinkedList<>();
 
-        // Adding bogie IDs (with duplicates)
-        System.out.println("\nAdding Bogie IDs:");
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
-        bogieIds.add("BG103");
-        bogieIds.add("BG101"); // duplicate
-        bogieIds.add("BG102"); // duplicate
+        // Initial bogies
+        train.add("Engine");
+        train.add("Sleeper");
+        train.add("AC");
+        train.add("Cargo");
+        train.add("Guard");
 
-        System.out.println("Entered IDs : BG101, BG102, BG103, BG101, BG102");
+        // Display initial consist
+        System.out.println("Initial Train Consist:");
+        System.out.println(train);
 
-        // Display unique bogie IDs
-        System.out.println("\nFinal Unique Bogie IDs:");
-        System.out.println(bogieIds);
+        // Insert Pantry Car at position 2
+        train.add(2, "Pantry Car");
 
-        System.out.println("\nUC3 operations completed successfully...");
+        System.out.println("\nAfter Inserting 'Pantry Car' at position 2:");
+        System.out.println(train);
+
+        // Remove first and last bogie
+        train.removeFirst();
+        train.removeLast();
+
+        System.out.println("\nAfter Removing First and Last Bogie:");
+        System.out.println(train);
+
+        System.out.println("\nUC4 ordered consist operations completed...");
     }
 }
