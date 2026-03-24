@@ -1,41 +1,31 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TrainConsistManagementApp {
 
     public static void main(String[] args) {
 
         System.out.println("========================================");
-        System.out.println("UC2 - Add Passenger Bogies to Train");
+        System.out.println("UC3 - Track Unique Bogie IDs");
         System.out.println("========================================");
 
-        // Create ArrayList
-        List<String> passengerBogies = new ArrayList<>();
+        // Create HashSet
+        Set<String> bogieIds = new HashSet<>();
 
-        // Add bogies
-        passengerBogies.add("Sleeper");
-        passengerBogies.add("AC Chair");
-        passengerBogies.add("First Class");
+        // Adding bogie IDs (with duplicates)
+        System.out.println("\nAdding Bogie IDs:");
+        bogieIds.add("BG101");
+        bogieIds.add("BG102");
+        bogieIds.add("BG103");
+        bogieIds.add("BG101"); // duplicate
+        bogieIds.add("BG102"); // duplicate
 
-        System.out.println("\nAfter Adding Bogies:");
-        System.out.println("Passenger Bogies : " + passengerBogies);
+        System.out.println("Entered IDs : BG101, BG102, BG103, BG101, BG102");
 
-        // Remove AC Chair
-        passengerBogies.remove("AC Chair");
+        // Display unique bogie IDs
+        System.out.println("\nFinal Unique Bogie IDs:");
+        System.out.println(bogieIds);
 
-        System.out.println("\nAfter Removing 'AC Chair':");
-        System.out.println("Passenger Bogies : " + passengerBogies);
-
-        // Check existence
-        boolean exists = passengerBogies.contains("Sleeper");
-
-        System.out.println("\nChecking if 'Sleeper' exists:");
-        System.out.println("Contains Sleeper? : " + exists);
-
-        // Final list
-        System.out.println("\nFinal Train Passenger Consist:");
-        System.out.println(passengerBogies);
-
-        System.out.println("\nUC2 operations completed successfully...");
+        System.out.println("\nUC3 operations completed successfully...");
     }
 }
